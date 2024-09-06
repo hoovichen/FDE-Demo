@@ -1,32 +1,54 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+  <div id="linker">
+    <div class="header">
+      <div class="header-container">
+        <router-link to="/"><img alt="logo" src="./assets/logo.png" class="logo-img"></router-link>
+      </div>
+      <div class="menu-container">
+        <ul class="menu">
+          <li class="menu-item">
+            <router-link to="/" :class="{'no-active': isHomePage}">Home</router-link>
+          </li>
+          <li class="menu-item">
+            <router-link to="/product">Products</router-link>
+          </li>
+        </ul>
+        <ul class="menu secondary-menu">
+          <li class="menu-item secondary-menu-item">
+            <router-link to="/about">About Us</router-link>
+          </li>
+          <li class="menu-item secondary-menu-item">
+            <router-link to="/">Ask Us</router-link>
+          </li>
+          <li class="menu-item secondary-menu-item">
+            <router-link to="/">Contacts</router-link>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="view">
+      <router-view/>
+    </div>
   </div>
 </template>
 
+<script>
+export default {
+  computed: {
+    isHomePage() {
+      return this.$route.path === '/'
+    }
+  }
+}
+</script>
+
 <style>
-#app {
+  @import 'AppStyle.scss';
+#linker {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+  width:  100vw;
+  height: 100vw;
 }
 </style>
