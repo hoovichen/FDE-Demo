@@ -1,14 +1,16 @@
 <template>
     <div class="slick-body">
       <div class="slick-container">
-        <el-button plain @click="prevSlide">&lt;</el-button>
         <div class="slick-track">
             <div class="slick-slide" v-for="(image, index) in images" :key="index" v-show="index === currentSlide">
               <img :src="image.src" :alt="image.alt" class="slide-image">
               <h1 class="overlay-text">{{image.text}}</h1>
+              <div role="navigation" class="slick-button-container">
+                <el-button plain @click="prevSlide">&lt;</el-button>
+                <el-button plain @click="nextSlide">></el-button>
+              </div>
             </div>
           </div>
-        <el-button plain @click="nextSlide">></el-button>
       </div>
     </div>
 </template>
@@ -57,6 +59,7 @@ export default {
   }
 
   .slick-track {
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -71,10 +74,19 @@ export default {
     align-items: center;
     height: 400px;
   }
+  .slick-button-container {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .slide-image {
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 500px;
+    height: 100%;
     object-fit: cover;
   }
 
@@ -86,6 +98,15 @@ export default {
     font-size: 2em;
     color: white;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
-    pointer-events: none; /* 让鼠标点击穿过文本 */
+    pointer-events: none;
+  }
+
+  @media (max-width: 500px) {
+    .slide-image {
+      width: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      height: auto;
+    }
   }
 </style>

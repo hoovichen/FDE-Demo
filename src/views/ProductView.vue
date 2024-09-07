@@ -24,5 +24,7 @@ export default {
 </script>
 
 <style scoped>
-  /* 添加你自己的样式 */
+  .product {
+    background-color: white;
+  }
 </style>

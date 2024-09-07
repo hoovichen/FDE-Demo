@@ -3,14 +3,20 @@
     <div class="header">
       <div class="header-container">
         <router-link to="/"><img alt="logo" src="./assets/logo.png" class="logo-img"></router-link>
+        <div class="hidden-menu-button" @click="toggleMenu">
+          &#9776;
+        </div>
       </div>
-      <div class="menu-container">
+      <div class="menu-container" :class="{'menu-open': isMenuOpen}">
         <ul class="menu">
           <li class="menu-item">
             <router-link to="/" :class="{'no-active': isHomePage}">Home</router-link>
           </li>
           <li class="menu-item">
             <router-link to="/product">Products</router-link>
+          </li>
+          <li class="menu-item">
+            <router-link to="/">Our Stories</router-link>
           </li>
         </ul>
         <ul class="menu secondary-menu">
@@ -34,9 +40,19 @@
 
 <script>
 export default {
+  data() {
+    return {
+      isMenuOpen: false
+    }
+  },
   computed: {
     isHomePage() {
       return this.$route.path === '/'
+    }
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen
     }
   }
 }

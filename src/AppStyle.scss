@@ -1,130 +1,181 @@
+/* 主头部样式 */
 .header {
-    height: 175px;
-    width: 100%;
-    padding-top: 40px;
-    padding-bottom: 35px;
+  width: 100%;
+  padding-top: 40px;
+  background-color: #f7f3ea;
+  transition: height 0.5s ease; /* 头部的过渡效果 */
+}
+
+/* 头部容器，包含 Logo 和菜单 */
+.header-container {
+  padding-left: 10px;
+  padding-right: 28px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end; /* 对齐到底部 */
+}
+
+/* 汉堡菜单按钮的样式（移动端显示） */
+.hidden-menu-button {
+  display: none; /* 默认隐藏，移动端显示 */
+  cursor: pointer;
+  font-size: 30px;
+  height: 100%;
+}
+
+/* Logo 图片样式 */
+.logo-img {
+  width: 150px;
+  height: auto;
+}
+
+/* 菜单容器，包含导航菜单 */
+.menu-container {
+  height: 40px;
+  width: 85%;
+  padding-right: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdd992;
+}
+
+/* 当菜单展开时，应用于菜单容器的样式 */
+.menu-container.menu-open {
+  display: flex;
+}
+
+/* 导航菜单 */
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  margin: 0;
+}
+
+/* 导航菜单项 */
+.menu-item {
+  list-style: none;
+  background-color: #fdd992;
+  transition: background-color 0.3s ease; /* 鼠标悬停时背景颜色过渡效果 */
+  height: 100%;
+}
+
+/* 主导航链接在桌面端和移动端的不同样式 */
+.menu-item a {
+  padding-left: 18px;
+  padding-right: 18px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  white-space: nowrap;
+}
+
+/* 链接的悬停效果 */
+.menu-item a:hover {
+  background-color: #e0c084;
+}
+
+/* 活跃状态的导航链接 */
+.menu-item a.router-link-exact-active {
+  background-color: #7c6c4a;
+  color: white;
+}
+
+/* 特定类的活跃链接，不会改变颜色 */
+.menu-item a.no-active.router-link-exact-active {
+  background-color: #fdd992;
+  color: black;
+}
+
+.menu-item a.no-active:hover {
+  background-color: #e0c084;
+}
+
+/* 响应式布局：移动端样式 */
+@media (max-width: 768px) {
+  .header {
+    height: auto; /* 根据内容自动调整头部高度 */
   }
-  
-  .header-container {
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .logo-img {
-    width: 150px;
-    height: auto;
-  }
-  
+
   .menu-container {
-    height: 40px;
-    width: 85%;
-    padding-right: 15%;
+    flex-direction: column; /* 菜单垂直排列 */
+    width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #fdd992;
+    position: absolute;
+    justify-content: center;
+    left: 0;
+    z-index: 1;
+    opacity: 0;  /* 默认隐藏菜单 */
+    max-height: 0;  /* 隐藏内容 */
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease; 
   }
-  
-  .view {
-    background-color: #000000;
+
+  /* 汉堡菜单按钮在移动端显示 */
+  .hidden-menu-button {
+    display: block;
   }
+
+  .menu-container.menu-open {
+    max-height: 500px; /* 展开时的最大高度 */
+    opacity: 1;  /* 显示菜单 */
+  }
+
   .menu {
-    display: flex;
-    justify-content:flex-start;
-    align-items: center;
-    height: 100%;
-    position: relative;
-    margin: 0px;
+    flex-direction: column;  /* 菜单项垂直排列 */
   }
-  
+
   .menu-item {
-    list-style: none;
-    background-color: #fdd992;
-    transition: background-color 0.3s ease;
-    height: 100%;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
   }
-  @media (max-width: 1023px) {
-    .menu-item a{
-      padding-left: 15px;
-      padding-right: 15px;
-      text-decoration: none;
-      font-weight:initial;
-      font-size: 16px;
-      transition: font-size 0.3s ease;
-      color: #000000;
-      height: 100%;
-      white-space: nowrap;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-    .secondary-menu-item a {
-        font-weight:bold;   
-    }
+}
+
+/* 响应式布局：较大屏幕的样式 */
+@media (min-width: 1024px) {
+  .menu-item a {
+    padding-left: 18px;
+    padding-right: 18px;
+    font-size: 18px;
+    transition: font-size 0.3s ease;
   }
-  @media (min-width: 1024px) {
-    .menu-item a{
-      padding-left: 18px;
-      padding-right: 18px;
-      text-decoration: none;
-      font-weight:initial;
-      font-size: 18px;
-      transition: font-size 0.3s ease;
-      color: #000000;
-      height: 100%;
-      white-space: nowrap;
-      display: flex;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-    }
-    .secondary-menu-item a {
-        font-weight:bold;   
-    }
+}
+
+/* 更小屏幕时的适配 */
+@media (max-width: 300px) {
+  .fix-top {
+    height: 300px;
+    width: 100%;
   }
-    
-  .menu-item a:hover {
-    background-color: #e0c084;
+
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding-left: 0;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
   }
-  
-  .menu-item a.router-link-exact-active {
-    background-color: #7c6c4a;
-    color: white;
+
+  nav {
+    flex-direction: column;
+    width: 100%;
   }
-  
-  .menu-item a.no-active.router-link-exact-active {
-    background-color: #fdd992;
-    color: black;
+
+  nav a {
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    box-sizing: border-box;
   }
-  .menu-item a.no-active:hover {
-    background-color: #e0c084;
-  }
-  /*暂时*/
-  @media (max-width: 300px) {
-    .fix-top {
-      height: 300px;
-      width: 100%;
-    }
-    .nav-container {
-      flex-direction: column;
-      height: auto;
-      padding-left: 0;
-      width: 100%;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    nav {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    nav a {
-      width: 100%;
-      text-align: left;
-      padding: 10px;
-      box-sizing: border-box;
-    }
-  }
+}

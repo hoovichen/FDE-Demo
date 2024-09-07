@@ -37,6 +37,7 @@ export default {
   }
 
   .img-container {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,12 +53,12 @@ export default {
   }
   /* 当屏幕小于780px */
   @media (max-width: 780px){
-    .logo-img {
-      width: calc(100% - 20vw);
-      min-width: 180px;
-      max-width: 380px;
-      height: auto;
-      align-items: center;
+    .top {
+      padding: 10px 0; /* 小屏幕下缩小顶部和底部的内边距 */
+    }
+    .img-container {
+      width: 100%; /* 确保容器在小屏幕上依然占满宽度 */
+      padding: 0 15px; /* 增加左右内边距，防止内容贴边 */
     }
   }
 </style>
