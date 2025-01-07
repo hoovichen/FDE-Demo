@@ -17,13 +17,13 @@
       <div class="products-grid">
         <!-- 产品卡片 - 使用轮播图中的图片作为展示 -->
         <div class="product-card" v-for="(slide, index) in imageSlides" :key="index">
-          <div class="product-image">
+          <div class="product-image" @click="navigateToProduct(slide)">
             <img :src="slide.src" :alt="slide.alt">
           </div>
           <div class="product-info">
             <h3 class="product-name">{{ slide.text }}</h3>
             <p class="product-description">精心挑选的优质食材,为您带来舌尖上的美味享受</p>
-            <button class="learn-more-btn">
+            <button class="learn-more-btn" @click="navigateToProduct(slide)">
               <span>了解详情</span>
               <i class="arrow-icon">→</i>
             </button>
@@ -58,10 +58,25 @@ export default {
   data() {
     return {
       imageSlides: [
-        { src: require('@/assets/Foods/food_0.jpg'), alt: 'Slide 1', text: 'First Product' },
-        { src: require('@/assets/Foods/food_1.jpg'), alt: 'Slide 2', text: 'Second Product' },
+        {
+          src: require('@/assets/Foods/food_0.jpg'),
+          alt: 'Slide 1',
+          text: 'First Product',
+          productId: 1
+        },
+        {
+          src: require('@/assets/Foods/food_1.jpg'),
+          alt: 'Slide 2',
+          text: 'Second Product',
+          productId: 2
+        },
         { src: require('@/assets/Foods/food_2.jpg'), alt: 'Slide 3', text: 'Third Product' },
-        { src: require('@/assets/Foods/food_3.jpg'), alt: 'Slide 4', text: 'Fourth Product' }
+        { src: require('@/assets/Foods/food_3.jpg'), alt: 'Slide 4', text: 'Fourth Product' },
+        { src: require('@/assets/Foods/food_4.jpg'), alt: 'Slide 5', text: 'Fifth Product' },
+        { src: require('@/assets/Foods/food_5.jpg'), alt: 'Slide 6', text: 'Sixth Product' },
+        { src: require('@/assets/Foods/food_6.jpg'), alt: 'Slide 7', text: 'Seventh Product' },
+        { src: require('@/assets/Foods/food_7.jpg'), alt: 'Slide 8', text: 'Eighth Product' },
+        { src: require('@/assets/Foods/food_8.jpg'), alt: 'Slide 9', text: 'Ninth Product' }
       ],
       products: [
         {
@@ -79,6 +94,16 @@ export default {
   },
   components: {
     Slick
+  },
+  methods: {
+    navigateToProduct(slide) {
+      this.$router.push({
+        name: 'product',
+        query: {
+          productId: slide.productId
+        }
+      })
+    }
   }
 }
 </script>

@@ -1,0 +1,224 @@
+/* Logo和导航容器样式 */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Logo样式 */
+.header-logo-container {
+  flex-shrink: 0;
+  margin-right: 20px;
+
+  .logo-img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+/* 导航菜单样式 */
+.menu-container {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: nowrap; /* 防止换行 */
+  }
+}
+
+/* 导航链接样式 */
+.nav-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+  position: relative;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #a49a82;
+    transition: all 0.4s ease;
+  }
+
+  &:hover,
+  &.active {
+    color: #2c3e50;
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+/* 移动端菜单按钮样式 */
+.hidden-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 8px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #2c3e50;
+  }
+}
+
+/* 响应式布局 - 768px以下直接切换到移动端样式 */
+@media (max-width: 768px) {
+  .header-container {
+    min-width: auto;
+    padding: 0 15px;
+  }
+
+  .header {
+    padding: 10px 0;
+  }
+
+  .view {
+    padding-top: 70px;
+  }
+
+  .logo-img {
+    height: 50px;
+  }
+
+  /* 移动端菜单按钮显示 */
+  .hidden-menu-button {
+    display: block;
+    z-index: 1001;
+  }
+
+  /* 移动端导航菜单样式 */
+  .menu-container {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #F9EBC7;
+    margin: 0;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+
+    &.menu-open {
+      display: block;
+    }
+
+    .menu {
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+  }
+
+  .menu-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: 15px 0;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* 更小屏幕的适配 */
+@media (max-width: 300px) {
+  .view {
+    padding-top: 60px;
+  }
+
+  .logo-img {
+    height: 40px;
+  }
+}
+
+/* 语言切换按钮样式 */
+.language-switch {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: #F9EBC7;
+
+  .lang-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    color: #666;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #a49a82;
+      transition: all 0.4s ease;
+    }
+
+    &:hover,
+    &.active {
+      color: #2c3e50;
+
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  .lang-divider {
+    color: #666;
+    margin: 0 2px;
+  }
+}
+
+/* 移动端语言切换按钮适配 */
+@media (max-width: 768px) {
+  .language-switch {
+    margin: 20px auto;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+  }
+}

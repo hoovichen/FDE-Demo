@@ -3,12 +3,7 @@
       <div class="slick-container">
         <div class="slick-track">
             <div class="slick-slide" v-for="(image, index) in images" :key="index" v-show="index === currentSlide">
-              <img :src="image.src" :alt="image.alt" class="slide-image">
-              <h1 class="overlay-text">{{image.text}}</h1>
-              <div role="navigation" class="slick-button-container">
-                <el-button plain @click="prevSlide">&lt;</el-button>
-                <el-button plain @click="nextSlide">></el-button>
-              </div>
+              <img :src="image.src" :alt="image.alt" class="slide-image" @click="nextSlide">
             </div>
           </div>
       </div>
@@ -28,11 +23,17 @@ export default {
     }
   },
   methods: {
-    nextSlide() {
-      this.currentSlide = (this.currentSlide + 1) % this.images.length
-    },
-    prevSlide() {
-      this.currentSlide = (this.currentSlide - 1 + this.images.length) % this.images.length
+    nextSlide(event) {
+      // 根据点击位置切换轮播图
+      const rect = event.target.getBoundingClientRect()
+      // x position within the element.
+      const x = event.clientX - rect.left
+      const width = rect.width
+      if (x < width / 2) {
+        this.currentSlide = (this.currentSlide - 1 + this.images.length) % this.images.length
+      } else {
+        this.currentSlide = (this.currentSlide + 1) % this.images.length
+      }
     }
   }
 }
@@ -73,13 +74,6 @@ export default {
     justify-content: center;
     align-items: center;
     height: 400px;
-  }
-  .slick-button-container {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
   .slide-image {
