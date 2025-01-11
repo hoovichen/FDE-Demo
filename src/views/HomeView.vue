@@ -1,30 +1,30 @@
 <template>
   <div class="home">
-    <!-- 品牌形象展示区 - 大气轮播展现品牌魅力 -->
+    <!-- 品牌形象展示区 Brand Image Showcase -->
     <section class="hero-section">
       <div class="slider-container">
         <Slick :images="imageSlides"></Slick>
       </div>
     </section>
 
-    <!-- 产品展示区域 - 以优雅的网格布局展示我们的精选产品 -->
+    <!-- 产品展示区域 Featured Products Section -->
     <section class="products-section">
       <div class="section-title">
-        <h2>精选产品</h2>
+        <h2>{{ getTranslation('home.featuredProducts') }}</h2>
         <div class="title-underline"></div>
       </div>
 
       <div class="products-grid">
-        <!-- 产品卡片 - 使用轮播图中的图片作为展示 -->
+        <!-- 产品卡片 Product Cards -->
         <div class="product-card" v-for="(slide, index) in imageSlides" :key="index">
           <div class="product-image" @click="navigateToProduct(slide)">
             <img :src="slide.src" :alt="slide.alt">
           </div>
           <div class="product-info">
             <h3 class="product-name">{{ slide.text }}</h3>
-            <p class="product-description">精心挑选的优质食材,为您带来舌尖上的美味享受</p>
+            <p class="product-description">{{ getTranslation('home.productDesc') }}</p>
             <button class="learn-more-btn" @click="navigateToProduct(slide)">
-              <span>了解详情</span>
+              <span>{{ getTranslation('home.learnMore') }}</span>
               <i class="arrow-icon">→</i>
             </button>
           </div>
@@ -32,10 +32,10 @@
       </div>
     </section>
 
-    <!-- 品牌故事区域 -->
+    <!-- 品牌故事区域 Brand Story Section -->
     <section class="brand-story">
       <div class="section-title">
-        <h2>品牌故事</h2>
+        <h2>{{ getTranslation('home.brandStory') }}</h2>
         <div class="title-underline"></div>
       </div>
       <div class="story-content">
@@ -44,7 +44,7 @@
           <p>{{ brandStory.content }}</p>
         </div>
         <div class="story-image">
-          <img :src="brandStory.image" alt="品牌故事">
+          <img :src="brandStory.image" :alt="getTranslation('home.brandStoryAlt')">
         </div>
       </div>
     </section>
@@ -53,10 +53,42 @@
 
 <script>
 import Slick from '@/components/Slick.vue'
+import { mapState } from 'vuex'
+
+// 翻译文本常量 Translation Constants
+const TRANSLATIONS = {
+  zh: {
+    home: {
+      featuredProducts: '精选产品',
+      productDesc: '精心挑选的优质食材,为您带来舌尖上的美味享受',
+      learnMore: '了解详情',
+      brandStory: '品牌故事',
+      brandStoryAlt: '品牌故事图片'
+    }
+  },
+  en: {
+    home: {
+      featuredProducts: 'Special Products',
+      productDesc: 'Carefully selected quality ingredients for your delightful taste experience',
+      learnMore: 'Learn More',
+      brandStory: 'Brand Story',
+      brandStoryAlt: 'Brand Story Image'
+    }
+  }
+}
 
 export default {
+  components: {
+    Slick
+  },
+  computed: {
+    ...mapState({
+      currentLang: state => state.language.currentLang
+    })
+  },
   data() {
     return {
+      // 轮播图数据 Slider Data
       imageSlides: [
         {
           src: require('@/assets/Foods/food_0.jpg'),
@@ -70,32 +102,32 @@ export default {
           text: 'Second Product',
           productId: 2
         },
-        { src: require('@/assets/Foods/food_2.jpg'), alt: 'Slide 3', text: 'Third Product' },
-        { src: require('@/assets/Foods/food_3.jpg'), alt: 'Slide 4', text: 'Fourth Product' },
-        { src: require('@/assets/Foods/food_4.jpg'), alt: 'Slide 5', text: 'Fifth Product' },
-        { src: require('@/assets/Foods/food_5.jpg'), alt: 'Slide 6', text: 'Sixth Product' },
-        { src: require('@/assets/Foods/food_6.jpg'), alt: 'Slide 7', text: 'Seventh Product' },
-        { src: require('@/assets/Foods/food_7.jpg'), alt: 'Slide 8', text: 'Eighth Product' },
-        { src: require('@/assets/Foods/food_8.jpg'), alt: 'Slide 9', text: 'Ninth Product' }
+        { src: require('@/assets/Foods/food_2.jpg'), alt: 'Slide 3', text: 'Third Product', productId: 3 },
+        { src: require('@/assets/Foods/food_3.jpg'), alt: 'Slide 4', text: 'Fourth Product', productId: 4 },
+        { src: require('@/assets/Foods/food_4.jpg'), alt: 'Slide 5', text: 'Fifth Product', productId: 5 },
+        { src: require('@/assets/Foods/food_5.jpg'), alt: 'Slide 6', text: 'Sixth Product', productId: 6 },
+        { src: require('@/assets/Foods/food_6.jpg'), alt: 'Slide 7', text: 'Seventh Product', productId: 7 },
+        { src: require('@/assets/Foods/food_7.jpg'), alt: 'Slide 8', text: 'Eighth Product', productId: 8 },
+        { src: require('@/assets/Foods/food_8.jpg'), alt: 'Slide 9', text: 'Ninth Product', productId: 9 }
       ],
+      // 产品数据 Product Data
       products: [
         {
           name: '产品名称',
           description: '产品描述文本',
-          image: ''
+          image: require('@/assets/Foods/food_7.jpg')
         }
       ],
+      // 品牌故事数据 Brand Story Data
       brandStory: {
         title: '品牌故事标题',
         content: '品牌故事内容',
-        image: ''
+        image: require('@/assets/Foods/food_6.jpg')
       }
     }
   },
-  components: {
-    Slick
-  },
   methods: {
+    // 导航到产品详情页 Navigate to Product Detail
     navigateToProduct(slide) {
       this.$router.push({
         name: 'product',
@@ -103,12 +135,24 @@ export default {
           productId: slide.productId
         }
       })
+    },
+    // 获取翻译文本 Get Translation Text
+    getTranslation(key) {
+      const keys = key.split('.')
+      let result = TRANSLATIONS[this.currentLang]
+      for (const k of keys) {
+        if (result) {
+          result = result[k]
+        }
+      }
+      return result || key
     }
   }
 }
 </script>
 
 <style scoped>
+/* 以下样式保持不变 Styles remain unchanged */
 .home {
   width: 100%;
   background-color: #fff;

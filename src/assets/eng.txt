@@ -1,0 +1,63 @@
+{
+  "title": "与DICloak分享100万奖金",
+  "description": "为每个你推广的新用户，赚取高达10%的24个月订阅佣金！",
+  "registerBtn": "立即注册",
+  "loginBtn": "登录",
+  "registeredLabel": "已经注册？",
+  "simpleSteps": "开始的3个简单步骤",
+  "steps": [
+    {
+      "title": "1. 加入DICloak",
+      "description": "注册DICloak账户后开始推广。"
+    },
+    {
+      "title": "2. 分享推广链接",
+      "description": "复制你的推广链接，并与你的社区分享。"
+    },
+    {
+      "title": "3. 赚取奖励",
+      "description": "一旦用户订阅，你将享受到慷慨的奖励回报。"
+    }
+  ],
+  "whyJoin": "为什么加入DICloak推广奖励计划？"
+  "reasons": [
+    {
+      "title": "你将收到最慷慨的现金奖励",
+      "description": "对于每个你推荐到DICloak的新订阅，你将在接下来的24个月内赚取10%的现金返还！"
+    },
+    {
+      "title": "每个分享都将赚取奖励",
+      "description": "实时追踪你推广的新用户数量和他们生成的收入。只需在DICloak注册，并将你的推广链接发送给朋友！"
+    },
+    {
+      "title": "你将成为DICloak的一部分",
+      "description": "我们奖励每个帮助DICloak成长，并建立自己推荐计划的人，提供专门的顾问支持。"
+    },
+    {
+      "title": "你正在建立自己的网络",
+      "description": "DICloak致力于建立一个更强的跨境电子商务营销网络。通过加入，你将与他人结合资源，解锁更大的集体影响。"
+    }
+  ],
+  "cashback": "总现金返还$210,000奖励",
+  "cashbackDesc": "只需注册DICloak，并分享奖励。",
+  "policyExplanation": "政策解释",
+  "policies": [
+    {
+      "title": "你能赚多少？",
+      "explain": "所有你的推广奖励都可以通过PayPal或支付宝以现金形式提取。"
+    },
+    {
+      "title": "你什么时候能收到奖励？",
+      "explain": "你可以在你推荐的用户每月订阅处理后的第二天请求奖励提取。"
+    },
+    {
+      "title": "如何获取奖励？",
+      "explain": "你可以复制你的推广代码或链接，并与他人分享。"
+    }
+  ]，
+      "joinUs": "加入DICloak，分享奖励！",
+      "becomeAgent": "成为代理，赚取更高的收入。联系支持。",
+      "takeAction": "立即加入！",
+}
+
+
