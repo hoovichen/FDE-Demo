@@ -83,7 +83,7 @@
     "node-ipc": "^9.2.1",
     "commander": "8.0.0",
     "squire-rte": "git+https://github.com/sohee-lee7/Squire.git",
-    "raphael": "git+https://github.com/nhn/raphael.git",
+    "raphael": "git+https://github.com/nhn/raphael.git#78a6ed3ec269f33b6457b0ec66f8c3d1f2ed70e0",
     "eve": "git+https://github.com/adobe-webplatform/eve.git"
   }
 }
