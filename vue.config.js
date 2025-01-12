@@ -1,4 +1,4 @@
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/FDE-Demo/' : '/',
+  publicPath: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/FDE-Demo/' : '/',
   transpileDependencies: [],
 }
