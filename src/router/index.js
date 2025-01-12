@@ -43,6 +43,11 @@ const routes = [
     name: 'stories',
     meta: { title: 'Stories Page' },
     component: () => import('@/views/StoriesView.vue')
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    name: 'not-found',
+    component: () => import('@/views/NotFound.vue')
   }
 ]
 
