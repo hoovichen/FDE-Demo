@@ -1,8 +1,8 @@
 <template>
-<div class="coming-soon">
+  <div class="coming-soon">
     <h1>Coming Soon</h1>
     <p>We're crafting this story page. Please check back later!</p>
-</div>
+  </div>
 </template>
 
 <script>
