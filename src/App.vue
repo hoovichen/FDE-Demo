@@ -56,6 +56,18 @@
     <div class="view">
       <router-view/>
     </div>
+
+    <!-- 页脚版权信息 -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="copyright">
+          Copyright © {{ currentYear }} Fire Dragon Enterprise - All Rights Reserved.
+        </p>
+        <p class="icp">
+          ---
+        </p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -90,7 +102,8 @@ export default {
   name: 'App',
   data() {
     return {
-      isMenuOpen: false
+      isMenuOpen: false,
+      currentYear: new Date().getFullYear()
     }
   },
   computed: {
@@ -133,6 +146,9 @@ export default {
   min-height: 100vh;
   background-color: #fff;
   overflow-x: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 头部导航样式 */
@@ -153,5 +169,31 @@ export default {
   min-height: calc(100vh - 120px);
   width: 100%;
   position: relative;
+  flex: 1;
+}
+
+/* 页脚样式 */
+.footer {
+  width: 100%;
+  background-color: #F9EBC7;
+  padding: 20px 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+  color: #666;
+}
+
+.copyright {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.icp {
+  font-size: 12px;
+  color: #999;
 }
 </style>
