@@ -8,4 +8,7 @@
   status = 200
 
 [build.environment]
+YARN_CACHE_FOLDER = "/tmp/netlify-cache"
+
+[build.environment]
   NODE_VERSION = "16"

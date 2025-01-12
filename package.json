@@ -38,8 +38,7 @@
     "vue-splitpane": "1.0.4",
     "vuedraggable": "2.20.0",
     "vuex": "3.1.0",
-    "xlsx": "0.14.1",
-    "commander": "11.1.0"
+    "xlsx": "0.14.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.5.19",
@@ -82,6 +81,6 @@
   "resolutions": {
     "@achrinza/node-ipc": "^10.0.0",
     "node-ipc": "^9.2.1",
-    "commander": "11.1.0"
+    "commander": "8.0.0"
   }
 }

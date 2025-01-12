@@ -3560,10 +3560,10 @@
   dependencies:
     "delayed-stream" "~1.0.0"
 
-"commander@*", "commander@11.1.0":
-  "integrity" "sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ=="
-  "resolved" "https://registry.npmmirror.com/commander/-/commander-11.1.0.tgz"
-  "version" "11.1.0"
+"commander@*":
+  "integrity" "sha512-Xvf85aAtu6v22+E5hfVoLHqyul/jyxh91zvqk/ioJTQuJR7Z78n7H558vMPKanPSRgIEeZemT92I2g9Y8LPbSQ=="
+  "resolved" "https://registry.npmmirror.com/commander/-/commander-8.0.0.tgz"
+  "version" "8.0.0"
 
 "commander@^10.0.0":
   "integrity" "sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug=="
