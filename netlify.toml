@@ -1,6 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm run build"
+  command = "./setup_ssh.sh && npm run build"
 
 [[redirects]]
   from = "/*"
@@ -8,5 +8,5 @@
   status = 200
 
 [build.environment]
-  YARN_CACHE_FOLDER = "/tmp/netlify-cache"
+  GIT_SSH_COMMAND = "ssh -i /opt/buildhome/.ssh/deploy_key -o StrictHostKeyChecking=accept-new"
   NODE_VERSION = "16"
