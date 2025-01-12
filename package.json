@@ -81,6 +81,7 @@
   "resolutions": {
     "@achrinza/node-ipc": "^10.0.0",
     "node-ipc": "^9.2.1",
-    "commander": "8.0.0"
+    "commander": "8.0.0",
+    "squire-rte": "git+https://github.com/sohee-lee7/Squire.git"
   }
 }
