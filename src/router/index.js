@@ -31,6 +31,18 @@ const routes = [
     name: 'faq',
     meta: { title: 'FAQ Page' },
     component: () => import('@/views/FAQView.vue')
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    meta: { title: 'Contact Page' },
+    component: () => import('@/views/ContactView.vue')
+  },
+  {
+    path: '/stories',
+    name: 'stories',
+    meta: { title: 'Stories Page' },
+    component: () => import('@/views/StoriesView.vue')
   }
 ]
 
