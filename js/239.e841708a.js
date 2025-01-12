@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkfood_protal"]=self["webpackChunkfood_protal"]||[]).push([[239],{2239:function(o,t,e){e.r(t),e.d(t,{default:function(){return f}});var n=function(){var o=this,t=o.$createElement,e=o._self._c||t;return e("div",{staticClass:"not-found"},[e("h1",[o._v("404")]),e("p",[o._v("The page you are looking for does not exist.")]),e("router-link",{attrs:{to:"/"}},[o._v("Go back to home")])],1)},r=[],u={name:"NotFound"},l=u,a=e(1656),s=(0,a.A)(l,n,r,!1,null,null,null),f=s.exports}}]);
+//# sourceMappingURL=239.e841708a.js.map
