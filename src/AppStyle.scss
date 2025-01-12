@@ -33,6 +33,11 @@
   perspective: 1000px;
 }
 
+/* 为view添加上边距,预留导航栏空间 */
+.view {
+  padding-top: 110px;
+}
+
 .header-container {
   display: flex;
   justify-content: space-between;
