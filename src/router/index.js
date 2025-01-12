@@ -15,7 +15,7 @@ const routes = [
       },
       zh: {
         title: '首页 - 火龙企业',
-        description: '欢迎来到火龙企业，最佳酱料产品网站。'
+        description: '欢迎来到火龙企业。'
       }
     },
     component: HomeView
@@ -116,6 +116,23 @@ const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
   routes
+})
+
+// 添加全局导航守卫
+router.beforeEach((to, from, next) => {
+  // 从 store 获取当前语言
+  const currentLang = router.app.$store?.state.language.currentLang || 'zh'
+  // 设置标题和描述
+  if (to.meta && to.meta[currentLang]) {
+    document.title = to.meta[currentLang].title
+    // 更新 meta description
+    const metaDescription = document.querySelector('meta[name="description"]')
+    if (metaDescription) {
+      metaDescription.setAttribute('content', to.meta[currentLang].description)
+    }
+  }
+
+  next()
 })
 
 export default router

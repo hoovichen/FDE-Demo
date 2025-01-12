@@ -5,4 +5,12 @@ module.exports = {
     historyApiFallback: true, // 确保在开发环境支持路由回退
   },
   transpileDependencies: [],
+  chainWebpack: config => {
+    config
+      .plugin('html')
+      .tap(args => {
+        args[0].title = 'FireDragon Enterprise'
+        return args
+      })
+  }
 };

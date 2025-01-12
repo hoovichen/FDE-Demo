@@ -40,11 +40,11 @@
 
           <!-- 语言切换按钮 -->
           <div class="language-switch">
-            <button class="lang-btn" :class="{'active': currentLang === 'zh'}" @click="switchLanguage('zh')">
+            <button class="lang-btn" :class="{'active': currentLang === 'zh'}" @click="handleLanguageSwitch('zh')">
               中
             </button>
             <span class="lang-divider">|</span>
-            <button class="lang-btn" :class="{'active': currentLang === 'en'}" @click="switchLanguage('en')">
+            <button class="lang-btn" :class="{'active': currentLang === 'en'}" @click="handleLanguageSwitch('en')">
               En
             </button>
           </div>
@@ -130,6 +130,17 @@ export default {
   watch: {
     $route() {
       this.isMenuOpen = false
+    }
+  },
+  created() {
+    // 初始化时设置正确的标题和描述
+    const route = this.$route
+    if (route.meta && route.meta[this.currentLang]) {
+      document.title = route.meta[this.currentLang].title
+      const metaDescription = document.querySelector('meta[name="description"]')
+      if (metaDescription) {
+        metaDescription.setAttribute('content', route.meta[this.currentLang].description)
+      }
     }
   }
 }
