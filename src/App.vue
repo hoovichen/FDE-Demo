@@ -12,7 +12,7 @@
 
       <ul class="menu">
         <li v-for="item in allNavItems" :key="item.path" class="menu-item">
-          <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}" @click="closeMenu">
+          <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}" @click="handleRouterLinkClick">
             {{ getTranslation(item.translationKey) }}
           </router-link>
         </li>
@@ -32,7 +32,7 @@
         <nav class="menu-container left-menu" :class="{'menu-open': isMenuOpen}" aria-label="Left navigation">
           <ul class="menu">
             <li v-for="item in leftNavItems" :key="item.path" class="menu-item">
-              <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}">
+              <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}" @click="handleRouterLinkClick">
                 {{ getTranslation(item.translationKey) }}
               </router-link>
             </li>
@@ -46,7 +46,7 @@
 
         <!-- 居中Logo区域 -->
         <div class="header-logo-container">
-          <router-link to="/">
+          <router-link to="/" @click="handleRouterLinkClick">
             <img alt="logo" src="./assets/logo-3-topic.png" class="logo-img">
           </router-link>
         </div>
@@ -55,7 +55,7 @@
         <nav class="menu-container right-menu" :class="{'menu-open': isMenuOpen}" aria-label="Right navigation">
           <ul class="menu">
             <li v-for="item in rightNavItems" :key="item.path" class="menu-item">
-              <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}">
+              <router-link :to="item.path" class="nav-link" :class="{'active': $route.path === item.path}" @click="handleRouterLinkClick">
                 {{ getTranslation(item.translationKey) }}
               </router-link>
             </li>
@@ -153,7 +153,7 @@ export default {
     ...mapActions(['switchLanguage']),
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen
-      document.body.style.overflow = this.isMenuOpen ? 'hidden' : ''
+      // document.body.style.overflow = this.isMenuOpen ? 'hidden' : ''
     },
     getTranslation(key) {
       const keys = key.split('.')
@@ -167,7 +167,7 @@ export default {
     },
     closeMenu() {
       this.isMenuOpen = false
-      document.body.style.overflow = ''
+      // document.body.style.overflow = ''
       if (this.needsRefresh) {
         this.updateMetaInfo()
         this.needsRefresh = false
@@ -188,6 +188,10 @@ export default {
       this.switchLanguage(lang)
       this.needsRefresh = true
     },
+    handleRouterLinkClick() {
+      this.closeMenu()
+      window.scrollTo(0, 0)
+    },
     updateMetaInfo() {
       const route = this.$route
       if (route.meta && route.meta[this.currentLang]) {
@@ -203,6 +207,7 @@ export default {
     currentLang: {
       handler(newLang) {
         this.updateMetaInfo()
+        this.closeMenu()
       },
       immediate: true
     },

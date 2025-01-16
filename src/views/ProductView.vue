@@ -122,7 +122,9 @@ const PRODUCT_TRANSLATIONS = {
       3: '特辣',
       4: '特制指天椒辣椒酱',
       5: '脆虾米拌饭酱',
-      6: '江鱼仔拌饭酱'
+      6: '江鱼仔拌饭酱',
+      7: '特制蒜蓉蘸料',
+      8: '叁巴辣椒酱'
     }
   },
   en: {
@@ -152,7 +154,9 @@ const PRODUCT_TRANSLATIONS = {
       3: 'Hot',
       4: 'Special Bird\'s Eye Chili Sauce',
       5: 'Crispy Shrimp Rice Sauce',
-      6: 'Anchovy Rice Sauce'
+      6: 'Anchovy Rice Sauce',
+      7: 'Special Garlic Sauce',
+      8: 'Sambal Chili Sauce'
     }
   }
 }
@@ -181,7 +185,9 @@ export default {
         { id: 3, categoryId: 1, name: '特辣' },
         { id: 4, categoryId: 2, name: '特制指天椒辣椒酱' },
         { id: 5, categoryId: 3, name: '脆虾米拌饭酱' },
-        { id: 6, categoryId: 3, name: '江鱼仔拌饭酱' }
+        { id: 6, categoryId: 3, name: '江鱼仔拌饭酱' },
+        { id: 7, categoryId: 3, name: '特制蒜蓉蘸料' },
+        { id: 8, categoryId: 3, name: '叁巴辣椒酱' }
       ],
 
       // 产品数据
@@ -218,6 +224,50 @@ export default {
           categoryId: 2,
           subcategoryId: 4,
           description: '采用新鲜指天椒，辣度十足，口感独特。'
+        },
+        {
+          id: 5,
+          name: '特制蒜蓉蘸料',
+          price: 12.9,
+          sales: 500,
+          stock: 800,
+          image: require('@/assets/Products/suanrong.jpg'),
+          categoryId: 3,
+          subcategoryId: 7,
+          description: '采用新鲜蒜蓉，口感独特。'
+        },
+        {
+          id: 6,
+          name: '叁巴辣椒酱',
+          price: 9.9,
+          sales: 800,
+          stock: 1000,
+          image: require('@/assets/Products/sambal.jpg'),
+          categoryId: 3,
+          subcategoryId: 8,
+          description: '正宗叁巴辣椒酱，辣度适中，风味独特。'
+        },
+        {
+          id: 7,
+          name: '江鱼仔拌饭酱',
+          price: 13.9,
+          sales: 600,
+          stock: 800,
+          image: require('@/assets/Products/yinyu.jpg'),
+          categoryId: 3,
+          subcategoryId: 6,
+          description: '采用新鲜江鱼仔特制，口感独特，适合拌饭、炒菜。'
+        },
+        {
+          id: 8,
+          name: '脆虾米拌饭酱',
+          price: 18.9,
+          sales: 5000,
+          stock: 8000,
+          image: require('@/assets/Products/xiami.jpg'),
+          categoryId: 3,
+          subcategoryId: 5,
+          description: '采用新鲜虾米特制，口感独特，适合拌饭、炒菜。'
         }
       ]
     }
