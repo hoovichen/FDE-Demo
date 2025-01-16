@@ -65,7 +65,7 @@
         <div class="modal-inner">
           <!-- 弹窗左侧 - 产品图片 -->
           <div alt="甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce" class="modal-image">
-            <img alt="甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce" :src="selectedProduct.image" :alt="selectedProduct.name">
+            <img :src="selectedProduct.image" :alt="selectedProduct.alt">
           </div>
           <!-- 弹窗右侧 - 产品详细信息 -->
           <div class="modal-info">
@@ -201,7 +201,8 @@ export default {
           image: require('@/assets/Products/chili_sos.jpg'),
           categoryId: 1,
           subcategoryId: 1,
-          description: '采用精选辣椒制成，口感温和，适合大众口味。'
+          description: '采用精选辣椒制成，口感温和，适合大众口味。',
+          alt: '经典微辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
           id: 2,
@@ -212,7 +213,8 @@ export default {
           image: require('@/assets/Products/chili_sos.jpg'),
           categoryId: 1,
           subcategoryId: 2,
-          description: '使用优质辣椒，辣度适中，风味浓郁。'
+          description: '使用优质辣椒，辣度适中，风味浓郁。',
+          alt: '经典中辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
           id: 4,
@@ -223,7 +225,8 @@ export default {
           image: require('@/assets/Products/spe_chili.jpg'),
           categoryId: 2,
           subcategoryId: 4,
-          description: '采用新鲜指天椒，辣度十足，口感独特。'
+          description: '采用新鲜指天椒，辣度十足，口感独特。',
+          alt: '特制指天椒辣椒酱 | Special Bird\'s Eye Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
           id: 5,
@@ -234,7 +237,8 @@ export default {
           image: require('@/assets/Products/suanrong.jpg'),
           categoryId: 3,
           subcategoryId: 7,
-          description: '采用新鲜蒜蓉，口感独特。'
+          description: '采用新鲜蒜蓉，口感独特。',
+          alt: '特制蒜蓉蘸料 | Special Garlic Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制指天椒辣椒酱 | Special Bird\'s Eye Chili Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
           id: 6,
@@ -245,7 +249,8 @@ export default {
           image: require('@/assets/Products/sambal.jpg'),
           categoryId: 3,
           subcategoryId: 8,
-          description: '正宗叁巴辣椒酱，辣度适中，风味独特。'
+          description: '正宗叁巴辣椒酱，辣度适中，风味独特。',
+          alt: '正宗叁巴辣椒酱 | Sambal Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制指天椒辣椒酱 | Special Bird\'s Eye Chili Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 经典微辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 经典中辣甘文阁辣椒酱 | Kampung Koh Chili Sauce'
         },
         {
           id: 7,
@@ -256,7 +261,8 @@ export default {
           image: require('@/assets/Products/yinyu.jpg'),
           categoryId: 3,
           subcategoryId: 6,
-          description: '采用新鲜江鱼仔特制，口感独特，适合拌饭、炒菜。'
+          description: '采用新鲜江鱼仔特制，口感独特，适合拌饭、炒菜。',
+          alt: '江鱼仔拌饭酱 | Anchovy Rice Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 特制指天椒辣椒酱 | Special Bird\'s Eye Chili Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 经典微辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 经典中辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 正宗叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
           id: 8,
@@ -267,7 +273,8 @@ export default {
           image: require('@/assets/Products/xiami.jpg'),
           categoryId: 3,
           subcategoryId: 5,
-          description: '采用新鲜虾米特制，口感独特，适合拌饭、炒菜。'
+          description: '采用新鲜虾米特制，口感独特，适合拌饭、炒菜。',
+          alt: '脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制指天椒辣椒酱 | Special Bird\'s Eye Chili Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 经典微辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 经典中辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 正宗叁巴辣椒酱 | Sambal Chili Sauce'
         }
       ]
     }

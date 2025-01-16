@@ -10,12 +10,12 @@ const routes = [
     name: 'home',
     meta: {
       en: {
-        title: 'Home - FireDragon',
-        description: 'Welcome to FireDragon, the best sauce products website.'
+        title: 'FireDragon - Malaysian Traditional Chili Sauce Manufacturer',
+        description: 'Welcome to FireDragon, We specializes in traditional chili sauce manufacturing, bringing authentic Kampung Koh flavors to global consumers.'
       },
       zh: {
-        title: '首页 - 火龙企业',
-        description: '欢迎来到火龙企业。'
+        title: '火龙企业 - 马来西亚传统辣椒酱制造商',
+        description: '欢迎来到火龙企业，我们专注于传统辣椒酱制造，将马来西亚甘文阁的地道风味带给全球消费者。'
       }
     },
     component: HomeView
