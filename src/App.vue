@@ -1,5 +1,8 @@
 <template>
   <div id="linker">
+    <!-- 添加基础 meta 标签 -->
+    <meta name="keywords" content="火龙企业, Firedragonmy, Fire Dragon Enterprise, 甘文阁辣椒酱, Kampung koh sos chili, 马来西亚辣椒酱, Malaysian chili sauce, 传统酱料, traditional sauce, 潘泰勒米士, Pantai Remis, 辣椒酱制造商, chili sauce manufacturer">
+    <meta name="description" content="火龙企业专注于传统辣椒酱制造，将马来西亚甘文阁的地道风味带给全球消费者。Fire Dragon Enterprise specializes in traditional chili sauce manufacturing, bringing authentic Kampung Koh flavors to global consumers.">
     <!-- 修改遮罩层，添加点击事件 -->
     <div class="menu-overlay" :class="{'active': isMenuOpen}" @click="closeMenu" style="pointer-events: auto;"></div>
 
@@ -47,7 +50,7 @@
         <!-- 居中Logo区域 -->
         <div class="header-logo-container">
           <router-link to="/" @click="handleRouterLinkClick">
-            <img alt="logo" src="./assets/logo-3-topic.png" class="logo-img">
+            <img alt="火龙企业标志 | Fire Dragon Enterprise Logo" src="./assets/logo-3-topic.png" class="logo-img">
           </router-link>
         </div>
 

@@ -64,8 +64,8 @@
         <button class="close-btn" @click="closeProductDetail">&times;</button>
         <div class="modal-inner">
           <!-- 弹窗左侧 - 产品图片 -->
-          <div class="modal-image">
-            <img :src="selectedProduct.image" :alt="selectedProduct.name">
+          <div alt="甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce" class="modal-image">
+            <img alt="甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce" :src="selectedProduct.image" :alt="selectedProduct.name">
           </div>
           <!-- 弹窗右侧 - 产品详细信息 -->
           <div class="modal-info">
