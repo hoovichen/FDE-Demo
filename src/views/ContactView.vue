@@ -108,7 +108,7 @@ export default {
         { region: '澳门', contact: '梁俊康' },
         { region: '香港', contact: '吴家豪' },
         { region: '英国', contact: '郭堂正' },
-        { region: '新加坡', contact: '待定' }
+        { region: '新加坡', contact: 'Serene' }
       ],
       form: {
         name: '',
