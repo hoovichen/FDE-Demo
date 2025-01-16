@@ -16,7 +16,7 @@
       </div>
 
       <!-- 子分类导航按钮组 - 仅在选择主分类时显示 -->
-      <div class="subcategory-nav" v-if="currentSubcategories.length">
+      <div v-if="currentSubcategories.length" class="subcategory-nav">
         <button v-for="sub in currentSubcategories" :key="sub.id" :class="['subcategory-btn', {'active': selectedSubcategory === sub.id}]" @click="selectedSubcategory = sub.id">
           {{ getTranslation(`subcategories.${sub.id}`) }}
         </button>
@@ -312,6 +312,19 @@ export default {
       }
     }
   },
+  created() {
+    // 处理从首页跳转过来的产品展示
+    const productId = parseInt(this.$route.query.productId)
+    if (productId) {
+      const product = this.products.find(p => p.id === productId)
+      if (product) {
+        this.showProductDetail(product)
+        // 自动选中对应的分类
+        this.selectedCategory = product.categoryId
+        this.selectedSubcategory = product.subcategoryId
+      }
+    }
+  },
   methods: {
     // 重置所有筛选条件
     resetFilters() {
@@ -357,19 +370,6 @@ export default {
     // 处理图片加载失败
     handleImageError(e) {
       e.target.src = require('@/assets/Products/default.jpg')
-    }
-  },
-  created() {
-    // 处理从首页跳转过来的产品展示
-    const productId = parseInt(this.$route.query.productId)
-    if (productId) {
-      const product = this.products.find(p => p.id === productId)
-      if (product) {
-        this.showProductDetail(product)
-        // 自动选中对应的分类
-        this.selectedCategory = product.categoryId
-        this.selectedSubcategory = product.subcategoryId
-      }
     }
   }
 }
