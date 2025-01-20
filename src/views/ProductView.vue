@@ -45,7 +45,7 @@
           </span>
         </div>
         <div class="product-info">
-          <h3 class="product-name">{{ product.name }}</h3>
+          <h3 class="product-name">{{ product.name[currentLang] }}</h3>
           <div class="product-meta">
             <span class="price">RM {{ product.price.toFixed(2) }}</span>
             <span class="sales">{{ getTranslation('product.sales') }}: {{ product.sales }}+</span>
@@ -194,7 +194,10 @@ export default {
       products: [
         {
           id: 1,
-          name: '经典微辣甘文阁辣椒酱',
+          name: {
+            zh: '经典微辣甘文阁辣椒酱 - 绿盖',
+            en: 'Classic Mild Kampung Koh Chili Sauce - Green Cap'
+          },
           price: 3.2,
           sales: 1000,
           stock: 200,
@@ -206,7 +209,10 @@ export default {
         },
         {
           id: 2,
-          name: '经典中辣甘文阁辣椒酱',
+          name: {
+            zh: '经典中辣甘文阁辣椒酱 - 红盖',
+            en: 'Classic Medium Kampung Koh Chili Sauce - Red Cap'
+          },
           price: 3.2,
           sales: 800,
           stock: 150,
@@ -218,7 +224,10 @@ export default {
         },
         {
           id: 3,
-          name: '经典特辣甘文阁辣椒酱',
+          name: {
+            zh: '经典特辣甘文阁辣椒酱 - 黄盖',
+            en: 'Classic Hot Kampung Koh Chili Sauce - Yellow Cap'
+          },
           price: 3.2,
           sales: 1000,
           stock: 100,
@@ -230,7 +239,10 @@ export default {
         },
         {
           id: 4,
-          name: '特制指天椒辣椒酱',
+          name: {
+            zh: '特制指天椒辣椒酱',
+            en: 'Special Bird\'s Eye Chili Sauce'
+          },
           price: 7.2,
           sales: 1200,
           stock: 30,
@@ -242,7 +254,10 @@ export default {
         },
         {
           id: 5,
-          name: '特制蒜蓉蘸料',
+          name: {
+            zh: '特制蒜蓉蘸料',
+            en: 'Special Garlic Sauce'
+          },
           price: 13.5,
           sales: 500,
           stock: 800,
@@ -254,7 +269,10 @@ export default {
         },
         {
           id: 6,
-          name: '叁巴辣椒酱',
+          name: {
+            zh: '叁巴辣椒酱',
+            en: 'Sambal Chili Sauce'
+          },
           price: 7.5,
           sales: 800,
           stock: 1000,
@@ -266,7 +284,10 @@ export default {
         },
         {
           id: 7,
-          name: '江鱼仔拌饭酱',
+          name: {
+            zh: '江鱼仔拌饭酱',
+            en: 'Anchovy Rice Sauce'
+          },
           price: 9.0,
           sales: 600,
           stock: 800,
@@ -278,7 +299,10 @@ export default {
         },
         {
           id: 8,
-          name: '脆虾米拌饭酱',
+          name: {
+            zh: '脆虾米拌饭酱',
+            en: 'Crispy Shrimp Rice Sauce'
+          },
           price: 8.45,
           sales: 5000,
           stock: 8000,
