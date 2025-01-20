@@ -195,7 +195,7 @@ export default {
         {
           id: 1,
           name: '经典微辣甘文阁辣椒酱',
-          price: 3.9,
+          price: 3.2,
           sales: 1000,
           stock: 200,
           image: require('@/assets/Products/chili_sos.jpg'),
@@ -207,19 +207,31 @@ export default {
         {
           id: 2,
           name: '经典中辣甘文阁辣椒酱',
-          price: 3.9,
+          price: 3.2,
           sales: 800,
           stock: 150,
-          image: require('@/assets/Products/chili_sos.jpg'),
+          image: require('@/assets/Products/chili_red.jpg'),
           categoryId: 1,
           subcategoryId: 2,
           description: '使用优质辣椒，辣度适中，风味浓郁。',
           alt: '经典中辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
         },
         {
+          id: 3,
+          name: '经典特辣甘文阁辣椒酱',
+          price: 3.2,
+          sales: 1000,
+          stock: 100,
+          image: require('@/assets/Products/chili_yellow.jpg'),
+          categoryId: 1,
+          subcategoryId: 3,
+          description: '使用优质辣椒，辣度适中，风味浓郁。',
+          alt: '经典特辣甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce'
+        },
+        {
           id: 4,
           name: '特制指天椒辣椒酱',
-          price: 7.9,
+          price: 7.2,
           sales: 1200,
           stock: 30,
           image: require('@/assets/Products/spe_chili.jpg'),
@@ -231,7 +243,7 @@ export default {
         {
           id: 5,
           name: '特制蒜蓉蘸料',
-          price: 12.9,
+          price: 13.5,
           sales: 500,
           stock: 800,
           image: require('@/assets/Products/suanrong.jpg'),
@@ -243,7 +255,7 @@ export default {
         {
           id: 6,
           name: '叁巴辣椒酱',
-          price: 9.9,
+          price: 7.5,
           sales: 800,
           stock: 1000,
           image: require('@/assets/Products/sambal.jpg'),
@@ -255,7 +267,7 @@ export default {
         {
           id: 7,
           name: '江鱼仔拌饭酱',
-          price: 13.9,
+          price: 9.0,
           sales: 600,
           stock: 800,
           image: require('@/assets/Products/yinyu.jpg'),
@@ -267,7 +279,7 @@ export default {
         {
           id: 8,
           name: '脆虾米拌饭酱',
-          price: 18.9,
+          price: 8.45,
           sales: 5000,
           stock: 8000,
           image: require('@/assets/Products/xiami.jpg'),
