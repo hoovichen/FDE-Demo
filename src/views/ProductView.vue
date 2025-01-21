@@ -69,7 +69,7 @@
           </div>
           <!-- 弹窗右侧 - 产品详细信息 -->
           <div class="modal-info">
-            <h2>{{ selectedProduct.name }}</h2>
+            <h2>{{ selectedProduct.name[currentLang] }}</h2>
             <p class="modal-price">RM {{ selectedProduct.price.toFixed(2) }}</p>
             <div class="modal-stats">
               <span>{{ getTranslation('product.sales') }}: {{ selectedProduct.sales }}+</span>
