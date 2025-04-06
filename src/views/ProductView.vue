@@ -43,6 +43,11 @@
           <span v-if="product.stock <= 50" class="stock-tag" :class="{'low-stock': product.stock < 50}">
             {{ getTranslation('product.stock') }}: {{ product.stock }}
           </span>
+          <!-- 旧版本产品预览 -->
+          <div v-if="product.oldImage" class="old-version-preview">
+            <img :src="product.oldImage" :alt="'旧版 ' + product.name[currentLang]">
+            <span class="old-version-label">{{ getTranslation('product.oldLabel') }}</span>
+          </div>
         </div>
         <div class="product-info">
           <h3 class="product-name">{{ product.name[currentLang] }}</h3>
@@ -65,7 +70,11 @@
         <div class="modal-inner">
           <!-- 弹窗左侧 - 产品图片 -->
           <div alt="甘文阁辣椒酱 | Kampung Koh Chili Sauce | 马来西亚辣椒酱 | Malaysian Chili Sauce | 脆虾米拌饭酱 | Crispy Shrimp Rice Sauce | 江鱼仔拌饭酱 | Anchovy Rice Sauce | 特制蒜蓉蘸料 | Special Garlic Sauce | 叁巴辣椒酱 | Sambal Chili Sauce" class="modal-image">
-            <img :src="selectedProduct.image" :alt="selectedProduct.alt">
+            <img :src="currentModalImage" :alt="selectedProduct.alt">
+            <!-- 切换图片按钮 -->
+            <button v-if="selectedProduct.oldImage" class="switch-image-btn" @click="toggleModalImage">
+              <span class="arrow">></span>
+            </button>
           </div>
           <!-- 弹窗右侧 - 产品详细信息 -->
           <div class="modal-info">
@@ -102,7 +111,8 @@ const PRODUCT_TRANSLATIONS = {
       sales: '销量',
       price: 'RM',
       allProducts: '全部产品',
-      description: '产品描述'
+      description: '产品描述',
+      oldLabel: ' 旧版包装'
     },
     sort: {
       default: '默认排序',
@@ -134,7 +144,8 @@ const PRODUCT_TRANSLATIONS = {
       sales: 'Sales',
       price: 'RM',
       allProducts: 'All Products',
-      description: 'Product Description'
+      description: 'Product Description',
+      oldLabel: ' Old Packages'
     },
     sort: {
       default: 'Default Sort',
@@ -170,6 +181,7 @@ export default {
       selectedSubcategory: null,
       sortBy: 'default',
       selectedProduct: null,
+      showOldImage: false, // 新增：控制是否显示旧版图片
 
       // 产品分类数据
       categories: [
@@ -216,7 +228,8 @@ export default {
           price: 3.2,
           sales: 800,
           stock: 150,
-          image: require('@/assets/Products/chili_red.jpg'),
+          image: require('@/assets/Products/chili_red_new.png'),
+          oldImage: require('@/assets/Products/chili_red.jpg'),
           categoryId: 1,
           subcategoryId: 2,
           description: '使用优质辣椒，辣度适中，风味浓郁。',
@@ -353,6 +366,12 @@ export default {
         default:
           return products
       }
+    },
+
+    // 当前显示的弹窗图片
+    currentModalImage() {
+      if (!this.selectedProduct) return ''
+      return this.showOldImage && this.selectedProduct.oldImage ? this.selectedProduct.oldImage : this.selectedProduct.image
     }
   },
   created() {
@@ -401,13 +420,20 @@ export default {
     // 显示产品详情弹窗
     showProductDetail(product) {
       this.selectedProduct = product
+      this.showOldImage = false // 重置图片显示状态
       document.body.style.overflow = 'hidden' // 防止背景滚动
     },
 
     // 关闭产品详情弹窗
     closeProductDetail() {
       this.selectedProduct = null
+      this.showOldImage = false // 重置图片显示状态
       document.body.style.overflow = 'auto' // 恢复背景滚动
+    },
+
+    // 切换弹窗中的图片显示
+    toggleModalImage() {
+      this.showOldImage = !this.showOldImage
     },
 
     // 处理图片加载失败
@@ -517,6 +543,67 @@ export default {
   width: 100%;
   height: 100%;
   object-fit: scale-down;
+}
+
+/* 旧版本预览样式 */
+.old-version-preview {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  background: white;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.old-version-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.old-version-label {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  white-space: nowrap;
+}
+/* 切换图片按钮样式 */
+.switch-image-btn {
+  right: 10px;
+  bottom: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.switch-image-btn:hover {
+  background: #fff;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.switch-image-btn .arrow {
+  font-size: 20px;
+  color: #333;
+  transform: rotate(0deg);
+  transition: transform 0.3s ease;
 }
 
 /* 库存标签样式 */
