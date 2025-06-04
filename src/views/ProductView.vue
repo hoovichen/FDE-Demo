@@ -211,7 +211,7 @@ export default {
             en: 'Classic Mild Kampung Koh Chili Sauce - Green Cap'
           },
           price: 3.2,
-          sales: 1000,
+          sales: 8000,
           stock: 200,
           image: require('@/assets/Products/chili_sos.jpg'),
           categoryId: 1,
@@ -226,7 +226,7 @@ export default {
             en: 'Classic Medium Kampung Koh Chili Sauce - Red Cap'
           },
           price: 3.2,
-          sales: 800,
+          sales: 8000,
           stock: 150,
           image: require('@/assets/Products/chili_red_new.png'),
           oldImage: require('@/assets/Products/chili_red.jpg'),
@@ -242,7 +242,7 @@ export default {
             en: 'Classic Hot Kampung Koh Chili Sauce - Yellow Cap'
           },
           price: 3.2,
-          sales: 1000,
+          sales: 10000,
           stock: 100,
           image: require('@/assets/Products/chili_yellow.jpg'),
           oldImage: require('@/assets/Products/chili_yellow_old.jpg'),
@@ -258,7 +258,7 @@ export default {
             en: 'Special Bird\'s Eye Chili Sauce'
           },
           price: 7.2,
-          sales: 1200,
+          sales: 12000,
           stock: 30,
           image: require('@/assets/Products/spe_chili.jpg'),
           categoryId: 2,
@@ -273,7 +273,7 @@ export default {
             en: 'Special Garlic Sauce'
           },
           price: 13.5,
-          sales: 500,
+          sales: 5000,
           stock: 800,
           image: require('@/assets/Products/suanrong.jpg'),
           categoryId: 3,
@@ -288,7 +288,7 @@ export default {
             en: 'Sambal Chili Sauce'
           },
           price: 7.5,
-          sales: 800,
+          sales: 8000,
           stock: 1000,
           image: require('@/assets/Products/sambal.jpg'),
           categoryId: 3,
@@ -303,7 +303,7 @@ export default {
             en: 'Anchovy Rice Sauce'
           },
           price: 9.0,
-          sales: 600,
+          sales: 6000,
           stock: 800,
           image: require('@/assets/Products/yinyu.jpg'),
           categoryId: 3,
@@ -318,7 +318,7 @@ export default {
             en: 'Crispy Shrimp Rice Sauce'
           },
           price: 8.45,
-          sales: 5000,
+          sales: 20000,
           stock: 8000,
           image: require('@/assets/Products/xiami.jpg'),
           categoryId: 3,
