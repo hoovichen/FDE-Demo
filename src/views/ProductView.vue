@@ -245,7 +245,7 @@ export default {
           sales: 10000,
           stock: 100,
           image: require('@/assets/Products/chili_yellow.jpg'),
-          oldImage: require('@/assets/Products/chili_yellow_old.jpg'),
+          oldImage: require('@/assets/Products/chili_yellow_old.png'),
           categoryId: 1,
           subcategoryId: 3,
           description: '使用优质辣椒，辣度适中，风味浓郁。',
