@@ -214,6 +214,7 @@ export default {
           sales: 8000,
           stock: 200,
           image: require('@/assets/Products/chili_sos.jpg'),
+          oldImage: require('@/assets/Products/chili_sos_old.png'),
           categoryId: 1,
           subcategoryId: 1,
           description: '采用精选辣椒制成，口感温和，适合大众口味。',
