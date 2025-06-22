@@ -277,7 +277,6 @@ export default {
           sales: 5000,
           stock: 800,
           image: require('@/assets/Products/suanrong.png'),
-          oldImage: require('@/assets/Products/suanrong_old.jpg'),  
           categoryId: 3,
           subcategoryId: 7,
           description: '采用新鲜蒜蓉，口感独特。',
