@@ -245,7 +245,7 @@ export default {
           price: 3.2,
           sales: 10000,
           stock: 100,
-          image: require('@/assets/Products/chili_yellow.jpg'),
+          image: require('@/assets/Products/chili_yellow_new.png'),
           oldImage: require('@/assets/Products/chili_yellow_old.png'),
           categoryId: 1,
           subcategoryId: 3,
